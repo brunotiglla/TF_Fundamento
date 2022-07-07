@@ -16,6 +16,7 @@ protected:
 	Game* _game = nullptr;
 public:
 	int puntaje = 1;
+	int maxPuntaje = -999;
 	friend class ScreenList;
 	virtual void build() = 0;
 	virtual void destroy() = 0;
@@ -38,5 +39,6 @@ public:
 	void setParent(Game* game) {
 		_game = game;
 	}
+
 };
 

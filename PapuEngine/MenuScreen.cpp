@@ -80,7 +80,7 @@ void MenuScreen::draw()
 
 	//Alumno
 	sprintf_s(buffer, "Bruno Tiglla Arrascue");	
-	spriteFont->draw(_spriteBatch, buffer, glm::vec2(-350, 0), glm::vec2(1), 0.0f, color);
+	spriteFont->draw(_spriteBatch, buffer, glm::vec2(-225, 0), glm::vec2(1), 0.0f, color);
 
 	_spriteBatch.end();
 	_spriteBatch.renderBatch();

@@ -74,6 +74,11 @@ void GameOverScreen::draw()
 	color.a = 255;
 	spriteFont->draw(_spriteBatch, buffer, glm::vec2(-100, 50), glm::vec2(1), 0.0f, color);
 
+	//PUTANJE
+	char _buffer[256];
+	sprintf_s(_buffer, "Maximo Puntaje Obtenido: %d", puntaje);
+	spriteFont->draw(_spriteBatch, _buffer, glm::vec2(-250, 0), glm::vec2(1), 0.0f, color);
+
 	_spriteBatch.end();
 	_spriteBatch.renderBatch();
 
@@ -88,6 +93,8 @@ void GameOverScreen::update()
 	_camera.update();
 	inputManager.update();
 	checkInput();
+
+
 }
 
 void GameOverScreen::checkInput()

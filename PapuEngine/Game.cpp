@@ -85,7 +85,7 @@ void Game::update() {
 		
 	}
 	if (_screenList->_currentIndex == SCREEN_INDEX_GAMEPLAY) {
-		puntajeFinal = _currentScreen->puntaje;
+		puntajeFinal = _currentScreen->maxPuntaje;
 	}
 	else {
 		_currentScreen->puntaje = puntajeFinal;

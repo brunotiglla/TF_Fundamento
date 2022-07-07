@@ -48,7 +48,7 @@ void GamePlayScreen::build() {
 	cout << "Pos y" << _levels[_currenLevel]->getHeight() << endl;
 
 	//TODO creacion de humanos
-	for (int i = 0; i < 1; i++)
+	for (int i = 0; i < 50; i++)
 	{
 		_zombies.push_back(new Zombie());
 		glm::vec2 pos(randPosX(randomEngine) * TILE_WIDTH, randPosY(randomEngine) * TILE_WIDTH);		
@@ -159,27 +159,12 @@ void GamePlayScreen::draw() {
 		_gamePlay = false;
 		if (!_gamePlay && _currenLevel == 3) {
 			_btnReplay->draw(_spriteBatch, glm::vec2(_player->getPosition().x-50, _player->getPosition().y + 100));
-			//spriteFont->draw(_btnReplay->draw(_spriteBatch), glm::vec2(_player->getPosition().x - 125, _player->getPosition().y + 250), glm::vec2(2), 0.0f, color);
 		}
 	}
-	//TODO DERROTA
-	/*if (_humans.size() <= 0) {
-		char buffer[256];
-		sprintf_s(buffer, "Perdiste");
-		Color color;
-		color.r = 255;
-		color.g = 0;
-		color.b = 0;
-		color.a = 255;
-		spriteFont->draw(_spriteBatch, buffer, glm::vec2(_player->getPosition().x - 125, _player->getPosition().y + 250), glm::vec2(2), 0.0f, color);
-		_gamePlay = false;
 
-	}*/
-	 
 	//boton para resetear juego
 	if (!_gamePlay) {
 		_btnReplay->draw(_spriteBatch, glm::vec2(_player->getPosition().x-50, _player->getPosition().y + 100));
-		//spriteFont->draw(_btnReplay->draw(_spriteBatch), glm::vec2(_player->getPosition().x - 125, _player->getPosition().y + 250), glm::vec2(2), 0.0f, color);
 	}
 
 	_spriteBatch.end();
@@ -377,5 +362,9 @@ void GamePlayScreen::updatePuntaje(int tecla, int tipo) {
 		break;
 	default:
 		break;
+	}
+
+	if (maxPuntaje < puntaje) {
+		maxPuntaje = puntaje;
 	}
 }
